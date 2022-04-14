@@ -21,19 +21,20 @@ As you can see, my program can successfully trade at a loss :)
 2. When you are asked to enter a trading pair, you should enter it in the following format - BNBBTC, BTCBNB, SOLUSDT, etc.
 3. The quantity values are entered in decimal format - 0.222; 400.0; 0.002 etc.
 
-For AgentApp:
+# For AgentApp:
 - каким сервисом воспользовались (интегрировались, чьё АПИ использовали):
-    Binance API - крупная криптовалютная биржа.
-- количество запросов
-    не знаю
+Binance API - крупная криптовалютная биржа.
+- количество запросов:
+не знаю
 - список используемых библиотек (requirements.txt)
-    pandas, python-binance
-- используется ли база данных
-    нет
+pandas, python-binance
+- используется ли база данных:
+нет
 - сделано, как веб-сервер, или как скрипт
-    скрипт
+скрипт
 - прочее (может есть асинхронные задачи, докер, ci/cd, ...)
-    нету
+нету
 - сколько времени (в часах на это потрачено, примерно)
-    6 часов, но не подряд, делал в течении дня
+4 часа, но не подряд, делал в течении дня
+
 ## Дайте знать если ознакомились со всей работой
