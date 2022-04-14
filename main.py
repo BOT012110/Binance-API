@@ -8,7 +8,7 @@ client = Client(api_key, api_secret)
 inf_log_n_st = client.get_system_status()
 print(f"Logged in. Status: {inf_log_n_st['status']}; message: {inf_log_n_st['msg']}")
 
-print("Commands: 'average' ; 'buy' ; 'balance' ; 'inf_pairs'")
+print("Commands: 'average' ; 'buy' ; 'balance' ; 'inf_pair'")
 command = input()
 
 set_quantity = 0
@@ -42,7 +42,6 @@ def strategy(symbol, quantity, that=False):
             that = True
         else:
             print('****** No Trade? :( ******')
-            print(that)
 
     if that:
         while True:
@@ -82,7 +81,7 @@ def average():
             break
 
 
-def infpairs():
+def inf_pair():
     pair = input('Enter pair: ')
     inf = info_about_pairs(pair, "1m", '30')
     print(inf)
@@ -101,14 +100,14 @@ while command != "Exit":
     if command == "average":
         average()
 
-    elif command == "inf_pairs":
-        infpairs()
+    elif command == "inf_pair":
+        inf_pair()
 
     elif command == "buy":
         print('****** Do you want to buy Crypto? ******')
         action = input()
         if action == 'yes':
-            current_pairs = input("Enter pairs: ")
+            current_pairs = input("Enter pair: ")
             print("-------------------")
             quantity_qw = input('Enter quantity: ')
         else:
