@@ -4,10 +4,10 @@ Script that allows you to buy cryptocurrency using simple strategy. You also can
 1. Download and unzip archive
 2. Create new virtual environment in progect folder (optional)
 3. Install requirements.txt
-4. Open the progect and run the code
+4. Open the progect and read "How to use it"
 ## How to use it
-At the beggining you will need to open main.py and enter your api_key and api_secret to start trading with your account. 
-Then run the code program will ask you to choose one of the 4 options:
+At the begining  you will need to open main.py file and enter your api_key and api_secret to start trading with your Binance account. 
+Then run the code and program will ask you to choose one of the 4 options:
 
 1. Avarage - by selecting this option you can write a tradind pair and see it current average price based on 5 minut interval. ![Снимок экрана (20)](https://user-images.githubusercontent.com/47400349/163309233-c4d04002-8c98-4f7e-af4f-09d2eb390f13.png)
 2. Balance - you can see all your account balances that above 0, if you have money in BTC, ETH, SOL, the program will show you only these balances.!
