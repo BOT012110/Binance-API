@@ -1,15 +1,20 @@
+from os import sep
 from binance.client import Client
 import pandas as pa
 
-api_key = 'your_api_key'
-api_secret = 'your_api_secret'
+
+api_key = 'nNrfv2MweJDgY8eJCWAT9XbCrRj4E3n4pzgok7EgdBgfhFjvqoOGVJBgM4OniH05'
+api_secret = 'PVUiJMl5N4mar1WkP3WRwM7Z4Fh9JcB1jxnoT6e5lk0PHIBVr8h0g35pLVo28GV4'
 
 client = Client(api_key, api_secret)
 inf_log_n_st = client.get_system_status()
 print(f"Logged in. Status: {inf_log_n_st['status']}; message: {inf_log_n_st['msg']}")
 
-print("Commands: 'average' ; 'buy' ; 'balance' ; 'inf_pair'")
-command = input()
+command_list = ['1. Average', '2. Buy', '3. Balance', '4. Pair Info']
+ 
+print("List of available commands: ", *command_list, sep="\n")
+command = input("Enter the number of command: ")
+print("")
 
 set_quantity = 0
 set_price = 0
@@ -17,13 +22,14 @@ current_pairs = 0
 
 
 def info_about_pairs(symbol, time, look_back):
-    frame = pa.DataFrame(client.get_historical_klines(symbol, time, look_back + "min ago UTC"))
+    frame = pa.DataFrame(client.get_historical_klines(symbol, time, look_back + " min ago UTC"))
     frame = frame.iloc[:, :6]
     frame.columns = ['Time', 'Open', 'High', 'Low', 'Close', 'Volume']
     frame = frame.set_index('Time')
     frame.index = pa.to_datetime(frame.index, unit='ms')
     frame = frame.astype('float')
     return frame
+
 
 
 def strategy(symbol, quantity, that=False):
@@ -68,7 +74,8 @@ def average():
         avr_pairs = input()
         if avr_pairs == 'exit':
             break
-
+        
+        print("")
         candles = client.get_avg_price(symbol=avr_pairs)
         print(candles)
 
@@ -97,13 +104,13 @@ def balance():
 
 
 while command != "Exit":
-    if command == "average":
+    if command == "1":
         average()
 
-    elif command == "inf_pair":
+    elif command == "4":
         inf_pair()
 
-    elif command == "buy":
+    elif command == "2":
         print('****** Do you want to buy Crypto? ******')
         action = input()
         if action == 'yes':
@@ -114,11 +121,12 @@ while command != "Exit":
             break
         strategy(current_pairs, quantity_qw)
 
-    elif command == "balance":
+    elif command == "3":
         balance()
 
     else:
         print("***** Wrong command!!! *****")
 
-    print("***** Enter command *****")
-    command = input()
+    print("")
+    command = input("Enter the number of command: ")
+    print("")
