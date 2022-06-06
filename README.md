@@ -1,10 +1,13 @@
 # Binance-API
-Script that allows you to buy cryptocurrency using simple strategy. You also can use it to see: your Binance account balance; average price of pair; minute data of pair (High price, Low, Volume etc.) 
+Script that allows you to buy cryptocurrency using simple strategy. You also can use it to see: your Binance account balance; average price of pair; minute data of pair (High price, Low, Volume etc.)  
+
+**Be careful!!! I wrote this project just to learn how to work with the API, do not use this program for trading. The strategy used in the bot is very simple and does not guarantee you earnings.**
+
 ## How To Start
 1. Download and unzip archive
 2. Create new virtual environment in progect folder (optional)
 3. Install requirements.txt
-4. Open the progect and read "How to use it"
+4. Open the progect and read "How to use it" from text below
 ## How to use it
 At the begining  you will need to open main.py file and enter your api_key and api_secret to start trading with your Binance account. 
 Then run the code and program will ask you to choose one of the 4 options:
