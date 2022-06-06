@@ -3,8 +3,8 @@ from binance.client import Client
 import pandas as pa
 
 
-api_key = 'nNrfv2MweJDgY8eJCWAT9XbCrRj4E3n4pzgok7EgdBgfhFjvqoOGVJBgM4OniH05'
-api_secret = 'PVUiJMl5N4mar1WkP3WRwM7Z4Fh9JcB1jxnoT6e5lk0PHIBVr8h0g35pLVo28GV4'
+api_key = '<api_key>'
+api_secret = '<api_secret>
 
 client = Client(api_key, api_secret)
 inf_log_n_st = client.get_system_status()
