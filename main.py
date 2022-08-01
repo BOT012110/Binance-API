@@ -4,7 +4,7 @@ import pandas as pa
 
 
 api_key = '<api_key>'
-api_secret = '<api_secret>
+api_secret = '<api_secret>'
 
 client = Client(api_key, api_secret)
 inf_log_n_st = client.get_system_status()
